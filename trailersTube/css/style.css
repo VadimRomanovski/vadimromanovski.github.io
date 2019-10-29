@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&display=swap');
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #F5F5F5;
+	font-family: Latha;
+	color: #4E4F53;
+	font-size: 15px;
+}
+
+nav {
+	background-color: #FFFFFF;
+	padding: 10px;
+	border-radius: 7px;
+}
+
+h1 {
+	display: inline-block;
+}
+
+.slider {
+	width: 100%;
+	height: 65vh;
+	overflow: hidden;
+	position: relative;
+	transition: all ease 1s;
+}
+
+.slider img {
+    width: 100%;
+    height: 65vh;
+	position: absolute;
+	transition: all ease 1s;
+}
+
+nav i{
+    color: #992c29;
+    font-weight: 20px;
+}
+
+.opacityforslider {
+	opacity: 0;
+}
+
+.published {
+	font-weight: bold;
+	text-transform: uppercase;
+	color: white;
+}
+
+.raitingSpan {
+	font-weight: bold;
+	text-transform: uppercase;
+	color: white;
+}
+
+.date {
+	color: #992c29;
+	font-weight: bold;
+}
+
+.raiting {
+	color: #992c29;
+	font-weight: bold;
+}
+
+.allFilms {
+	background-color: #eeeff1;
+}
+
+.bottombar {
+    position: absolute;
+    display:flex;
+    align-items: center;
+	background-color: rgb(0, 0, 0, .8);
+	bottom: 0px;
+    padding-left: 1%;
+    height: 6vh;
+	width: 100%;
+	color: white;
+    border-top: 1px solid rgb(255, 255, 255, .4);
+    font-size: 10pt;
+	z-index: 2;
+}
+
+
+/* .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .5}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .5}
+    to {opacity: 1}
+  } */
+
+.sliderBtn {
+	background-color: #992c29;
+	color: white;
+	position: absolute;
+	top: 70%;
+	right: 15%;
+	z-index: 2;
+	border: none;
+	padding: 10px;
+	transition: .5s;
+	text-decoration: none;
+	/* border-radius: 5px; */
+	font-weight: bold;
+}
+
+.sliderBtn:hover {
+	background-color: #c0111a;
+	cursor: pointer;
+}
+
+.modal {
+	display: none;
+	background-color: rgb(0, 0, 0, .8);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+    position: fixed;
+    text-align: right;
+}
+
+.modal p{
+    color: white;
+    font-size: 25pt;
+    margin: 2%;
+    transition: .4s;
+}
+
+.modal p:hover{
+    color: #4E4F53;
+    cursor: pointer;
+}
+
+iframe {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.filmItem {
+	border-radius: 5px;
+	width: 15%;
+	height: 300px;
+	overflow: hidden;
+	margin: 1%;
+    position: relative;
+    background-repeat: round;
+}
+
+.filmItem img {
+	position: absolute;
+}
+
+.filmItem:hover {
+	box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5), 0 20px 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+.searchdiv {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-content: center;
+    align-items: center;
+    padding: 2%;
+    background-color: #eeeff1;
+
+}
+
+input{
+    border:none;
+    border-bottom: solid 1px #A1A2A4;
+    background-color:#eeeff1;
+    color: #4E4F53;
+    margin-right: 1%;
+}
+
+.sortSpan {
+	margin-left: 1%;
+    flex: 2;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nameFilm {
+	position: absolute;
+	background-color: rgb(0, 0, 0, .8);
+	bottom: 0px;
+	padding-left: 3%;
+	width: 100%;
+	color: white;
+	border-top: 1px solid rgb(255, 255, 255, .4);
+	z-index: 3;
+}
+
+.play {
+	position: absolute;
+	background-color: rgb(0, 0, 0, .5);
+	right: -2px;
+	top: 0px;
+	width: 20%;
+	color: white;
+	border-radius: 5px;
+	z-index: 3;
+	transition: .3s;
+	padding-left: 5%;
+}
+
+.playActive {
+	width: 90%;
+	/* background-color: #da222a; */
+	color: white;
+	padding: 5px;
+	text-align: left;
+	/* font-weight: bold; */
+}
+
+.raitingandrealise span {
+	display: block;
+}
+
+.raitingandrealise {
+	background-color: white;
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #eeeff1;
+	
+}
+
+.ratdate {
+	background-color: white;
+	font-weight: bold;
+}
+
+.name {
+	font-weight: bold;
+}
+
+.sort span {
+	cursor: pointer;
+}
+
+.sort span:hover {
+	color: rgb(199, 199, 199);
+}
+
+.sort {
+	flex: 2;
+}
