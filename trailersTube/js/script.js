@@ -20,70 +20,70 @@ filesForSlides = [{
 const filmData = [{
 		name: "Spider man homecoming",
 		imdb: "7.4",
-		realised: "06.07.2017",
+        realised: "2017,07,06",
 		img: "img/spiderman.jpg",
 		link: "https://www.youtube.com/embed/8wNgphPi5VM"
 	},
 	{
 		name: "Inferno",
 		imdb: "6.2",
-		realised: "13.11.2016",
+		realised: "2016,11,13",
 		img: "img/inferno.jpg",
 		link: "https://www.youtube.com/embed/RH2BD49sEZI"
 	},
 	{
 		name: "Stockholm",
 		imdb: "6.2",
-		realised: "19.04.2018",
+		realised: "2018,04,19",
 		img: "img/stockholm.jpg",
 		link: "https://www.youtube.com/embed/m8JqB8skMFQ"
 	},
 	{
 		name: "Green book",
 		imdb: "8.2",
-		realised: "24.01.2019",
+		realised: "2019,01,24",
 		img: "img/greenbook.jpg",
 		link: "https://www.youtube.com/embed/e6b9urtUJt0"
 	},
 	{
 		name: "Ad Astra",
 		imdb: "7.0",
-		realised: "26.09.2019",
+		realised: "2019,09,26",
 		img: "img/adastra.jpg",
 		link: "https://www.youtube.com/watch?v=P6AaSMfXHbA"
 	},
 	{
 		name: "Avengers: Endgame",
 		imdb: "8.5",
-		realised: "29.04.2019",
+		realised: "2019,04,29",
 		img: "img/marvel.jpg",
 		link: "https://www.youtube.com/watch?v=TcMBFSGVi1c"
 	},
 	{
 		name: "Toy Story 4",
 		imdb: "8",
-		realised: "11.06.2019",
+		realised: "2019,06,11",
 		img: "img/toystory.jpg",
 		link: "https://www.youtube.com/watch?v=wmiIUN-7qhE"
 	},
 	{
 		name: "Bohemian rhapsody",
 		imdb: "8",
-		realised: "01.10.2018",
+		realised: "2018,10,24",
 		img: "img/rapsody.jpg",
 		link: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ"
 	},
 	{
 		name: "Vice",
 		imdb: "7.2",
-		realised: "21.02.2019",
+		realised: "2019,02,12",
 		img: "img/vice.jpg",
 		link: "https://www.youtube.com/watch?v=aSGFt6w0wok"
 	},
 	{
-    name: "Spider man homecoming",
+    	name: "Spider man homecoming",
 		imdb: "7.4",
-		realised: "06.07.2017",
+		realised: "2017,07,06",
 		img: "img/spiderman2.jpg",
 		link: "https://www.youtube.com/embed/8wNgphPi5VM"
 	}
@@ -93,7 +93,7 @@ const fragment = new DocumentFragment();
 
 filesForSlides.forEach(function (item, index) {
 	const img = document.createElement("img");
-	img.classList.add("sliderimgs", "active", "fade");
+	img.classList.add("sliderimgs");
 	img.setAttribute("src", item.image);
 	fragment.append(img);
 });
@@ -120,6 +120,9 @@ function startSlider() {
 	};
 
 };
+
+
+
 startSlider();
 setInterval(startSlider, 5000);
 const modal = document.querySelector(".modal")
@@ -145,6 +148,11 @@ function createFilmsData(a) {
 	main.innerHTML = "";
 	a.forEach(function (item, index) {
     const itemFilm = document.createElement("div");
+    const d = item.realised;
+    const fullDate = new Date (d);
+    const date = fullDate.getDate();
+    const month = fullDate.getMonth()+1;
+    const year = fullDate.getFullYear();
     itemFilm.style.backgroundImage = "url("+item.img+")"
     itemFilm.classList.add("filmItem");
     itemFilm.innerHTML = `
@@ -154,7 +162,7 @@ function createFilmsData(a) {
 <div class="nameFilm">
   <p class="name">${item.name}</p>
   <p>IMDB: <span class="imdb">${item.imdb}</span></p>
-  <p>Realised: <span>${item.realised}</span></p>
+  <p>Realised: <span>${date}.${month}.${year}</span></p>
 </div>
  `
 //  <img src="${item.img}" alt="${item.name}">
@@ -208,8 +216,8 @@ sortMenu.forEach(function (item) {
 		if (value == "Realised") {
 
 			let sortFilmRealised = filmData.sort(function compare(a, b) {
-        a = new Date(b.date) 
-        b = new Date(a.date)
+        a = new Date(a.realised) 
+        b = new Date(b.realised)
         return b - a
       });
 			createFilmsData(sortFilmRealised)
