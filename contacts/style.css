@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+	}
+	
+	body{
+	background:#F5F5F5;
+	font-family: LATHA;
+	}
+	.main{
+	display:flex;
+	flex-direction: column;
+	background:white;
+	margin:auto;
+	width:60%
+	}
+	
+	header{
+	display:flex;
+	width:60%;
+	background: white;
+	}
+	
+	.allContacts{
+	background:white;
+	margin-bottom: 30px;
+	}
+	
+	.contact{
+	margin-top: 10px;
+	}
+	
+	.n{
+	display:flex;
+	flex-direction:row;
+	background: #DCDCDC;
+	}
+	
+	.p{
+	background:#F5F5F5;
+	}
+	
+	#addContact{
+	border:none;
+	background:#7a1616;
+	color:white;
+	text-transform: uppercase;
+	font-weight:bold;
+	width:120px;
+	height:50px;
+	}
+		
+	#srch{
+	height:25px;
+	}
+	
+	.xButton{
+	position:inherit;
+	display:flex;
+	margin-left:50%;
+	background: #7a1616;
+	width:50px;
+	border: none;
+	text-align:center;
+	padding:5px;
+	color:white;
+	}
+	
+	.nameSpan{
+	display:flex;
+	width:50%;
+	}
+	
+	.hide{
+	display: none;
+	}
+	
+	form{		
+    margin: auto;
+	width: 100%;
+	}
+	
+	#ADD{
+	border:none;
+	background:#7a1616;
+	color:white;
+	text-transform: uppercase;
+	font-weight:bold;
+	width:120px;
+	height:50px;
+	margin: auto;
+	}
+	
+	form input{
+	width: 50%;
+	}
+	
+	.nameField{
+	color: #7a1616;
+	text-transform: uppercase;
+	font-weight:bold;
+	}
+	
+	.phoneField{
+	color: #7a1616;
+	text-transform: uppercase;
+	font-weight:bold;	
+	}
+
+	.border{
+	border: 3px solid #7a1616;
+	}

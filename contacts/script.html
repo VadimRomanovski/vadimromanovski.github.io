@@ -1,0 +1,77 @@
+let contactsNotes = [
+		{
+		name: "John",
+		phone: "+2342344234",
+		},
+		{
+		name: "Lera",
+		phone: "+3456345464",
+		},
+		{
+		name: "Elis",
+		phone: "+5645645764",
+		}
+		];
+	function createContact(names, phones){	
+		let allContacts = document.querySelector('.allContacts');
+		let contact = document.querySelector('.contact');
+		let name = document.querySelector('contactName');
+		let phone = document.querySelector('contactPhone');
+		let contactDiv = document.createElement('div');
+		contactDiv.classList.add("contact");
+		allContacts.appendChild(contactDiv);
+		let nameDiv = document.createElement('div');
+		let nameSpan = document.createElement('span');
+		nameSpan.classList.add("nameSpan");
+		nameDiv.classList.add("n");
+		nameDiv.innerHTML = 'Name:'+' ';
+		nameSpan.innerHTML = names;
+		contactDiv.appendChild(nameDiv);
+		nameDiv.appendChild(nameSpan);
+		let createXbutton = document.createElement('button');
+		createXbutton.innerHTML = 'remove';
+		createXbutton.classList.add("xButton");
+		nameDiv.appendChild(createXbutton);
+		let phoneDiv = document.createElement('div');
+		phoneDiv.classList.add("p");
+		phoneDiv.innerHTML = 'Phone: '+ phones;
+		contactDiv.appendChild(phoneDiv);
+		//createXbutton.onclick = removeContact;
+		};
+	createContact(contactsNotes[0].name, contactsNotes[0].phone);
+	createContact(contactsNotes[1].name, contactsNotes[1].phone);
+	createContact(contactsNotes[2].name, contactsNotes[2].phone);
+	
+	function removeContact(){
+		let nameSpan = document.querySelectorAll(".nameSpan");
+			for(let i = 0; i<nameSpan.length; i++){
+				console.log(nameSpan[i].innerHTML);
+			}
+		//let nameValue = nameSpan[i].value;
+		//console.log (nameSpan[1].innerHTML);
+		return i;
+		
+	}
+	
+		let allButtons = document.querySelectorAll(".xButton");
+		for(let i = 0; i<allButtons.length; i++){
+			allButtons[i].onclick = removeContact;
+		};
+		
+		
+			
+	
+	let xButton = document.querySelector(".xButton");
+	xButton.onclick = removeContact;
+	
+	function findIdex(value) {
+		for(var i = 0; i < contactsNotes.length; i += 1) {
+			if(contactsNotes[i].name === value) {
+				console.log(i);
+			}
+			
+		}
+    
+	}
+
+findIdex('Lera');
