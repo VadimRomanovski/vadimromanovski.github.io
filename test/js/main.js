@@ -149,67 +149,6 @@ $(document).ready(function(){
     $(".service__title_sixth").removeClass("service__title-click");
     $(".service__span_sixth").removeClass("service__hidden_sixth");
          });
-   /* Input(remove "*"") */
-    $('.contacts__input_first').keypress(function () {
-    $(".contacts__required_first").addClass("none");
-   });
-   
-    $('.contacts__input_second').keypress(function () {
-    $(".contacts__required_second").addClass("none");
-   });
-   
-    $('.contacts__input_third').keypress(function () {
-    $(".contacts__required_third").addClass("none");
-   });
-   
-    $('.contacts__text').keypress(function () {
-    $(".contacts__required_fourth").addClass("none");
-   });
-   
-   /* Input(add "*"") */
-   
-   $('.contacts__input_first').blur(function()         
-   {                   
-       if( !$(this).val() ) {                     
-            $(".contacts__required_first").removeClass("none");   
-       }
-   });
-   
-   $('.contacts__input_second').blur(function()         
-   {                   
-       if( !$(this).val() ) {                     
-            $(".contacts__required_second").removeClass("none");   
-       }
-   });
-   
-   $('.contacts__input_third').blur(function()         
-   {                   
-       if( !$(this).val() ) {                     
-            $(".contacts__required_third").removeClass("none");   
-       }
-   });
-   
-   $('.contacts__text').blur(function()         
-   {                   
-       if( !$(this).val() ) {                     
-            $(".contacts__required_fourth").removeClass("none");   
-       }
-   });
-   
-   
-   /*Carousel Swipe */
-   
-   var hammer = new Hammer(document.querySelector('.carousel'));
-   var $carousel = $(".carousel").carousel({"interval":0});
-   hammer.get("swipe");
-   hammer.on("swipeleft", function(){
-       $carousel.carousel("next");
-   });
-   hammer.on("swiperight", function(){
-       $carousel.carousel("prev");
-   });
-   
-   }); 
    
     /* Team-info */
    
