@@ -238,6 +238,7 @@ body{
     word-spacing: -1px;
     text-align: justify;
     margin-top: 16px;
+    overflow: hidden;
 }
 
 .service_ico {
@@ -347,6 +348,10 @@ body{
     height: 601px;
     margin-top: 19px;
     overflow: hidden;
+}
+
+.portfolio_item:nth-child(n+13) {
+    display: none;
 }
 
 .about-us{
