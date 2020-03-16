@@ -5,9 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Singolo</title>
 </head>
 <body>
+    <div class="modal">
+        <div class="modal_container">
+            <p class="modal_status">
+                Письмо отправлено
+            </p>
+            <p class="modal_subject">
+            </p>
+            <p class="modal_describe">
+            </p>
+            <button class="submit_button" id="modal_button">Ok</button>
+        </div>
+    </div>
     <header class="header">
         <div class="wrapper">
             <div class="header_container">
@@ -15,12 +28,12 @@
                     <h1 class="logo_name">SINGOLO<span class="logo_star">*</span></h1>
                 </div>
                 <nav class="nav">
-                    <ul class="navigation">
-                        <li class="navigation_item"><a href="#" class="navigation_link">HOME</a></li>
-                        <li class="navigation_item"><a href="#" class="navigation_link">SERVICES</a></li>
-                        <li class="navigation_item"><a href="#" class="navigation_link">PORTFOLIO</a></li>
-                        <li class="navigation_item"><a href="#" class="navigation_link">ABOUT</a></li>
-                        <li class="navigation_item"><a href="#" class="navigation_link">CONTACT</a></li>
+                    <ul class="navigation" id="navigation">
+                        <li class="navigation_item"><a href="#" class="navigation_link active">HOME</a></li>
+                        <li class="navigation_item"><a href="#services_reffer" class="navigation_link">SERVICES</a></li>
+                        <li class="navigation_item"><a href="#portfolio_reffer" class="navigation_link">PORTFOLIO</a></li>
+                        <li class="navigation_item"><a href="#about_reffer" class="navigation_link">ABOUT</a></li>
+                        <li class="navigation_item"><a href="#contacts_reffer" class="navigation_link">CONTACT</a></li>
                     </ul>
                 </nav>
             </div>
@@ -30,17 +43,24 @@
                 <a href="#" class="left arrow">
                     <img src="assets/images/left-arrow.png" alt="">
                 </a>
-                <div class="phone-container_left-phone">
-                    <img src="assets/images/left-phone.png" alt="phone">
-                </div>
-                <div class="phone-container_right-phone">
-                    <img src="assets/images/right-phone.png" alt="phone" repeat = "no-repeat">
+                <div class="slider_conteiner">
+                    
+                    <div class="slide">
+                        <img src="assets/images/slide2.png">
+                    </div>
+                    <div class="slide show_slide">
+                        <div class="left-phone_black-screen"></div>
+                        <div class="phone_button"></div>
+                        <div class="right-phone_black-screen"></div>
+                        <div class="phone_button_right"></div>
+                        <img src="assets/images/slider-content.png" alt="">
+                    </div>
                 </div>
                 <a href="#" class="right arrow">
                     <img src="assets/images/right-arrow.png" alt="">
                 </a>
     </section>
-    <section class="services">
+    <section class="services" id="services_reffer">
         <article class="article">
             <h2 class="services_title">Our Services</h2>
             <p class="services_text">
@@ -131,7 +151,7 @@
             </div>
         </div>
     </section>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio_reffer">
         <div class="wrapper">
             <h2 class="portfolio_title">Portfolio</h2>
             <p class="portfolio_text">
@@ -146,22 +166,22 @@
                 </ul> 
             </div>
             <div class="portfolio_imgs-container">
-                <div class="portfolio_item"><img src="assets/images//portfolio_1.png" alt="portfolio" class="portfolio_img"></div>
-                <div class="portfolio_item"><img src="assets/images/portfolio_2.png" alt="portfolio" class="portfolio_img"></div>
-                <div class="portfolio_item"><img src="assets/images/portfolio_3.png" alt="portfolio" class="portfolio_img"></div>
-                <div class="portfolio_item"><img src="assets/images/portfolio_4.png" alt="portfolio" class="portfolio_img"></div>
-                <div class="portfolio_item"><img src="assets/images/portfolio_5.png" alt="portfolio" class="portfolio_img"></div>
-                <div class="portfolio_item"><img src="assets/images/portfolio_6.png" alt="portfolio" class="portfolio_img"></div>
-                <div class="portfolio_item"><img src="assets/images/portfolio_7.png" alt="portfolio" class="portfolio_img"></div>
-                <div class="portfolio_item"><img src="assets/images/portfolio_8.png" alt="portfolio" class="portfolio_img"></div>
-                <div class="portfolio_item"><img src="assets/images/portfolio_9.png" alt="portfolio" class="portfolio_img"></div>
-                <div class="portfolio_item"><img src="assets/images/portfolio_10.png" alt="portfolio" class="portfolio_img"></div>
-                <div class="portfolio_item"><img src="assets/images/portfolio_11.png" alt="portfolio" class="portfolio_img"></div>
-                <div class="portfolio_item"><img src="assets/images/portfolio_12.png" alt="portfolio" class="portfolio_img"></div>
+                <img src="assets/images//portfolio_1.png" alt="portfolio" class="portfolio_img">
+                <img src="assets/images//portfolio_2.png" alt="portfolio" class="portfolio_img">
+                <img src="assets/images//portfolio_3.png" alt="portfolio" class="portfolio_img">
+                <img src="assets/images//portfolio_4.png" alt="portfolio" class="portfolio_img">
+                <img src="assets/images//portfolio_5.png" alt="portfolio" class="portfolio_img">
+                <img src="assets/images//portfolio_6.png" alt="portfolio" class="portfolio_img">
+                <img src="assets/images//portfolio_7.png" alt="portfolio" class="portfolio_img">
+                <img src="assets/images//portfolio_8.png" alt="portfolio" class="portfolio_img">
+                <img src="assets/images//portfolio_9.png" alt="portfolio" class="portfolio_img">
+                <img src="assets/images//portfolio_10.png" alt="portfolio" class="portfolio_img">
+                <img src="assets/images//portfolio_11.png" alt="portfolio" class="portfolio_img">
+                <img src="assets/images//portfolio_12.png" alt="portfolio" class="portfolio_img">
             </div>
         </div>
     </section>
-    <section class="about-us">
+    <section class="about-us" id="about_reffer">
         <div class="wrapper">
             <h2 class="about-us_title">About Us</h2>
             <p class="about-us_text">
@@ -231,7 +251,7 @@
             </div>
         </div>
     </section>
-    <section class="contacts">
+    <section class="contacts" id="contacts_reffer">
         <div class="wrapper">
             <h2 class="contacts_title">Get a Quote</h2>
             <p class="contacts_text">
@@ -240,11 +260,11 @@
             </p>
             <div class="contacts_container">
                 <form class="contacts_form">
-                    <input type="text" required name="name" placeholder="Name(Required)" class="input"><br>
-                    <input type="email" required name="email" placeholder="Email(Required)" class="input"><br>
+                    <input type="text" name="name" placeholder="Name(Required)" class="input"><br>
+                    <input type="email" name="email" placeholder="Email(Required)" class="input"><br>
                     <input type="text" name="subject" placeholder="Subject" class="input"><br>
-                    <textarea name="describtion" placeholder="Describe your project in detail..."></textarea>
-                    <input type="submit" class="submit">
+                    <textarea name="describe" placeholder="Describe your project in detail..."></textarea>
+                    <input type="submit" class="submit_button" id="submit">
                 </form>
                 <div class="contacts_info">
                     <h3 class="contacts_info_title">Contact Information</h3>
