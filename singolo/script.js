@@ -60,7 +60,11 @@ const send = (form) => {
     let describe = form.describe.value;
     let name = form.name.value;
     let email = form.email.value;
-
+    if(!name || !email || !email.checkValidity()){
+        modalStatus.innerHTML = "Письмо не отправлено. Не правильное 'имя' или 'email'"
+    }else{
+        modalStatus.innerHTML = "Письмо отправлено"
+    }
     if(!subject){
         modalSubject.innerHTML = "Без темы";
     }else{
@@ -82,7 +86,7 @@ const send = (form) => {
     })
 };
 
-submitBtn.addEventListener("submit", (e) => {
+submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
     send(form);    
 });
