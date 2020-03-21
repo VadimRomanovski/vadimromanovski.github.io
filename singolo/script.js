@@ -53,6 +53,7 @@ const submitBtn = document.querySelector("#submit");
 const modalStatus = document.querySelector(".modal_status")
 
 const send = (form) => {
+    e.preventDefault();
     modal.style.display = "flex";
     const modalButton = modal.querySelector("button");
     let subject = form.subject.value;
