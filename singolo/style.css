@@ -25,8 +25,14 @@
     src: url("./assets/fonts/Lato-Regular.ttf")
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-size: 10px;
+    width: 1020px;
+    margin: auto;
 }
 
 a{
@@ -40,6 +46,13 @@ a{
     background-color: #2d303a;
     display: flex;
     border-bottom: 6px solid #323746;
+    transition: all ease 0.3s;
+    position: fixed;
+    z-index: 10;
+}
+
+.header-height{
+    height: 50px;
 }
 
 .header_container{
@@ -101,12 +114,13 @@ a{
     margin-left: 12px;
     vertical-align: middle;
 }
-
-.slider{
-    background-color: #f06c64;
+/* #f06c64 */
+.slider-section{
+    background-color: white;
     margin: auto;
     width: 1020;
-    height: 600px;
+    height: 695px;
+    padding-top: 95px;
     border-bottom: 6px solid #ea676b;
     display: flex;
     flex-direction: row;
@@ -121,38 +135,38 @@ a{
     height: 333px;
     position: absolute;
     background-color: black;
-    top: 65px;
-    left: 104px;
+    top: 119px;
+    left: 126px;
 }
 
 .right-phone_black-screen{
     display: none;
-    width: 333px;
+    width: 334px;
     height: 188px;
     position: absolute;
     background-color: black;
-    top: 137px;
-    left: 463px;
+    top: 191px;
+    left: 485px;
 }
 
 .phone_button{
     /* border: 1px solid black; */
-    position: relative;
+    position: absolute;
     width: 45px;
     height: 45px;
-    bottom: -406px;
-    left: 175px;
+    bottom: 95px;
+    left: 197px;
     border-radius: 50%;
     cursor: pointer;
 }
 
 .phone_button_right{
     /* border: 1px solid black; */
-    position: relative;
+    position: absolute;
     width: 45px;
     height: 45px;
-    bottom: -209px;
-    left: 365px;
+    top: 263px;
+    left: 432px;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -169,14 +183,6 @@ a{
     opacity: 100%;
 }
 
-.slider_conteiner{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
 .show{
     display: block;
 }
@@ -190,6 +196,7 @@ a{
     position: relative;
     left: 42px;
     bottom: 3px;
+    z-index: 20;
 }
 
 .right{
@@ -362,8 +369,15 @@ a{
     margin-top: 22px;
 }
 
+/* .tags{
+    width: 310px;
+} */
+
 .portfolio_tags{
+    display: flex;
+    justify-content: space-between;
     margin-top: 15px;
+    width: 290px;
 }
 
 .tags_item{
@@ -378,7 +392,6 @@ a{
     font-size: 12px;
     border: 1px solid #666d89;
     border-radius: 5px;
-    margin-right: 10px;
     padding-right: 6px;
     padding-left: 6px;
     padding-top: 2px;
@@ -735,7 +748,7 @@ textarea{
 	height: 100%;
 	top: 0;
 	left: 0;
-	z-index: 10
+	z-index: 20
 }
 
 .modal_container{
@@ -743,16 +756,18 @@ textarea{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding: 5px;
     background-color: #f16c64;
     border-radius: 5px;
     width: 50%;
-    height: 50%;
+    max-height: 1000px;
 }
 
 
 .modal_status{
     width: 90%;
     padding: 5px;
+    margin: 10px;
     text-transform: uppercase;
     border-radius: 5px;
     font-size: 19px;
@@ -765,6 +780,7 @@ textarea{
 
 .modal_subject{
     width: 90%;
+    margin: 5px;
     padding: 5px;
     border-radius: 5px;
     font-size: 15px;
@@ -775,10 +791,81 @@ textarea{
 
 .modal_describe{
     width: 90%;
+    margin: 5px;
+    margin-bottom: 10px;
+    max-height: 300px;
     padding: 5px;
     border-radius: 5px;
     font-size: 15px;
     color: white;
     font-family: sans-serif;
     background-color: #d6564f;
+    overflow: auto;
 }
+
+.carousel {
+    position: absolute;
+    top: 95px;
+    /* left: 12.1%; */
+    text-align: center;
+  }
+  
+  .items-container {
+    position: absolute;
+    width: 1020px;
+    overflow: hidden;
+  }
+  
+  .item {
+    display: none;
+    position: relative;
+    animation: 0.5s ease-in-out;
+    margin: 0 auto;
+  }
+
+.active-slide,
+.next {
+  display: flex;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.to-left {
+    animation-name: left;
+  }
+  
+  .from-right {
+    animation-name: right;
+  }
+  
+  .to-right {
+    animation-name: right;
+    animation-direction: reverse;
+  }
+  
+  .from-left {
+    animation-name: left;
+    animation-direction: reverse;
+  }
+  
+  @keyframes left {
+    from {
+      left: 0;
+    }
+    to {
+      left: -100%;
+    }
+  }
+  
+  @keyframes right {
+    from {
+      left: 100%;
+    }
+    to {
+      left: 0;
+    }
+  }
