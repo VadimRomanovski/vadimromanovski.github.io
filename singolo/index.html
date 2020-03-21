@@ -29,7 +29,7 @@
                 </div>
                 <nav class="nav">
                     <ul class="navigation" id="navigation">
-                        <li class="navigation_item"><a href="#" class="navigation_link active">HOME</a></li>
+                        <li class="navigation_item"><a href="#home" class="navigation_link active">HOME</a></li>
                         <li class="navigation_item"><a href="#services_reffer" class="navigation_link">SERVICES</a></li>
                         <li class="navigation_item"><a href="#portfolio_reffer" class="navigation_link">PORTFOLIO</a></li>
                         <li class="navigation_item"><a href="#about_reffer" class="navigation_link">ABOUT</a></li>
@@ -39,26 +39,27 @@
             </div>
         </div>
     </header>
-    <section class="slider">
-                <a href="#" class="left arrow">
-                    <img src="assets/images/left-arrow.png" alt="">
-                </a>
-                <div class="slider_conteiner">
-                    
-                    <div class="slide">
-                        <img src="assets/images/slide2.png">
-                    </div>
-                    <div class="slide show_slide">
-                        <div class="left-phone_black-screen"></div>
-                        <div class="phone_button"></div>
-                        <div class="right-phone_black-screen"></div>
-                        <div class="phone_button_right"></div>
-                        <img src="assets/images/slider-content.png" alt="">
-                    </div>
+    <section class="slider-section" id="home">
+        <a href="#" class="left arrow">
+            <img src="assets/images/left-arrow.png" alt="">
+        </a>
+        <div class="carousel">
+            <div class="items-container">
+                <div class="item active-slide">
+                    <div class="left-phone_black-screen"></div>
+                    <div class="phone_button"></div>
+                    <div class="right-phone_black-screen"></div>
+                    <div class="phone_button_right"></div>
+                    <img src="assets/images/Slide-1.png">
                 </div>
-                <a href="#" class="right arrow">
-                    <img src="assets/images/right-arrow.png" alt="">
-                </a>
+                <div class="item">
+                    <img src="assets/images/Slide-2.png">
+                </div>
+            </div>
+        </div>
+        <a href="#" class="right arrow">
+            <img src="assets/images/right-arrow.png" alt="">
+        </a>
     </section>
     <section class="services" id="services_reffer">
         <article class="article">
@@ -158,12 +159,10 @@
                 Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
             </p>
             <div class="portfolio_tags">
-                <ul class="tags">
-                    <li class="tags_item"><a href="#" class="tags_link tags-one">All</a></li>
-                    <li class="tags_item"><a href="#" class="tags_link tags-two">Web Design</a></li>
-                    <li class="tags_item"><a href="#" class="tags_link tags-three">Graphic Design</a></li>
-                    <li class="tags_item"><a href="#" class="tags_link tags-four">Artwork</a></li>
-                </ul> 
+                <span><a href="#" class="tags_link">All</a></span>
+                <span><a href="#" class="tags_link">Web Design</a></span>
+                <span><a href="#" class="tags_link">Graphic Design</a></span>
+                <span><a href="#" class="tags_link">Artwork</a></span>
             </div>
             <div class="portfolio_imgs-container">
                 <img src="assets/images//portfolio_1.png" alt="portfolio" class="portfolio_img">
@@ -260,8 +259,8 @@
             </p>
             <div class="contacts_container">
                 <form class="contacts_form">
-                    <input type="text" name="name" placeholder="Name(Required)" class="input"><br>
-                    <input type="email" name="email" placeholder="Email(Required)" class="input"><br>
+                    <input type="text" name="name" required placeholder="Name(Required)" class="input"><br>
+                    <input type="email" name="email" required placeholder="Email(Required)" class="input" ><br>
                     <input type="text" name="subject" placeholder="Subject" class="input"><br>
                     <textarea name="describe" placeholder="Describe your project in detail..."></textarea>
                     <input type="submit" class="submit_button" id="submit">
