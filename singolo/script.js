@@ -2,8 +2,9 @@ document.addEventListener("scroll", (e) => {
     const sections = document.querySelectorAll("section");
     const navigationLinks = document.querySelectorAll(".navigation_link");
     const currentPos = scrollY;
+    const nav = document.querySelector(".nav");
     const header = document.querySelector("header");
-    currentPos >= 200 ? header.classList.add("header-height") : header.classList.remove("header-height")
+    // currentPos >= 200 ? header.classList.add("header-height") : header.classList.remove("header-height")
     sections.forEach(section => {
         if(section.offsetTop <= currentPos && (section.offsetTop + section.offsetHeight) > currentPos){
             navigationLinks.forEach(item => {
@@ -16,6 +17,36 @@ document.addEventListener("scroll", (e) => {
         }
     })
     
+})
+
+const burger = document.querySelector(".burger");
+const nav = document.querySelector(".nav");
+const opacityWindow = document.querySelector(".opacityWindow");
+const logo = document.querySelector(".logo");
+
+const navigationLinks = document.querySelectorAll(".navigation_link");
+navigationLinks.forEach(item => {
+    item.addEventListener("click", () => {
+        opacityWindow.classList.remove("opacity");
+        nav.classList.remove("slide_nav");
+        burger.classList.remove("roate");
+        logo.classList.remove("logo_to-left");
+    })
+})
+
+opacityWindow.addEventListener("click", () => {
+    opacityWindow.classList.remove("opacity");
+    nav.classList.remove("slide_nav");
+    burger.classList.remove("roate");
+    logo.classList.remove("logo_to-left");
+})
+
+burger.addEventListener("click", () => {
+    // opacityWindow.classList.toggle("show");
+    opacityWindow.classList.toggle("opacity");
+    nav.classList.toggle("slide_nav");
+    burger.classList.toggle("roate");
+    logo.classList.toggle("logo_to-left");
 })
 
 const portfolioTags = document.querySelector(".portfolio_tags")
